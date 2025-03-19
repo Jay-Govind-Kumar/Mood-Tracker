@@ -1,0 +1,312 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  background-color: #008888;
+  overflow: hidden;
+}
+
+/* Main Container */
+
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 90vh;
+  width: 90vw;
+  border-radius: 10px;
+  margin: 1rem;
+  background-color: #008b8b;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+  /* overflow-y: scroll; */
+}
+
+h1 {
+  text-align: center;
+  margin: 0.5rem 0;
+  font-size: 3rem;
+  color: #f0f8ff;
+}
+
+p {
+  text-align: center;
+  font-size: 1rem;
+  color: #f0f8ff;
+  padding: 0.5rem;
+}
+
+/* Mood Buttons */
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 0.5rem 1rem;
+  gap: 1rem;
+}
+
+button {
+  margin: 0 0.5rem;
+  padding: 0.5rem 0.5rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: #008b8b;
+  color: #f0f8ff;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+  transition: all 0.3s ease-in-out;
+}
+
+button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+}
+
+/* Mood Output Section */
+.mood-output {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin: 0.5rem 0;
+}
+
+.mood-history {
+  width: 40%;
+  margin: 1rem;
+  padding: 1rem;
+  background-color: #008b8b;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+  color: #f0f8ff;
+  font-size: 1.5rem;
+  text-align: center;
+  height: 430px;
+  overflow-y: auto;
+}
+
+.mood-history h2,
+#selected-mood {
+  margin-bottom: 1rem;
+  font-size: 2rem;
+}
+
+#selected-mood::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: #f0f8ff;
+  margin-top: 0.5rem;
+}
+
+#mood-for-day {
+  font-size: 1.5rem;
+  margin-top: 1rem;
+  color: #054646;
+}
+
+.mood-history ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.mood-history li {
+  margin: 0.5rem 0;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  background-color: #008b8b;
+  color: #f0f8ff;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+}
+.mood-history li:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+}
+
+.mood-history li .delete-button {
+  width: 1.5rem;
+  height: 2rem;
+  border-radius: 50%;
+  cursor: pointer;
+  background-image: url(./assets/image.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  transition: all 0.3s ease-in-out;
+}
+
+.mood-history li .delete-button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+}
+
+.timestamp {
+  font-size: 0.8rem;
+  color: #f0f8ff;
+}
+
+/* Calender */
+.calender {
+  width: 60%;
+  height: 430px;
+  margin: 1rem;
+  padding: 1rem;
+  background-color: #008b8b;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+  color: #f0f8ff;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+#calendar-controls {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+#calendar {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr); /* 7 days in a week */
+  gap: 5px;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+#calendar div {
+  text-align: center;
+  padding: 10px;
+  background-color: #008b8b;
+  color: #f0f8ff;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: transform 0.3s;
+  position: relative;
+}
+
+#calendar div .mood-emoji {
+  font-size: 1rem;
+}
+
+#calendar div:hover {
+  transform: scale(1.1);
+}
+
+.mood-history li .emoji {
+  font-size: 1.5rem;
+}
+
+#calendar .current-day {
+  background-color: #f0f8ff;
+  color: #008b8b;
+}
+
+/* Footer Section */
+
+footer {
+  text-align: center;
+  font-size: 1rem;
+  color: #f0f8ff;
+  padding: 0.5rem;
+  margin-top: 1rem;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+footer p {
+  margin: 0 0.5rem;
+}
+
+/* Social Media Links */
+footer i {
+  margin: 0 0.5rem;
+  color: #f0f8ff;
+  text-decoration: none;
+  transition: all 0.3s ease-in-out;
+}
+
+/* scale the link on hover */
+footer i:hover {
+  transform: scale(1.5);
+  color: #f0f8ff;
+}
+
+/*  Media Queries */
+@media screen and (max-width: 1220px) {
+  .mood-output {
+    display: flex;
+    flex-wrap: wrap;
+    overflow-y: scroll;
+  }
+
+  .mood-history {
+    width: 100%;
+  }
+
+  .calender {
+    width: 100%;
+  }
+  .timestamp {
+    font-size: 0.8rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .calender {
+    height: 400px;
+    font-size: 1.05rem;
+  }
+
+  .mood-history {
+    height: 400px;
+    font-size: 1.05rem;
+  }
+
+  .mood-history li {
+    padding: 0.5rem 0.5rem;
+  }
+
+  .mood-history li .delete-button {
+    width: 1.2rem;
+    height: 1.5rem;
+  }
+
+  .timestamp {
+    font-size: 0.7rem;
+  }
+
+  footer {
+    font-size: 0.8rem;
+  }
+
+  footer p {
+    margin: 0 0.3rem;
+    font-size: 0.8rem;
+  }
+
+  footer i {
+    margin: 0 0.3rem;
+  }
+}

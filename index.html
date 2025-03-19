@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mood Tracker | Jay Govind</title>
+    <link rel="shortcut icon" href="./assets/mood.png" type="image/x-icon" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <!-- Header Section -->
+      <h1>Mood Tracker</h1>
+      <p>How are you feeling today?</p>
+
+      <!-- Mood Buttons -->
+
+      <div class="buttons">
+        <button id="happy" title="Happy">😊 Happy</button>
+        <button id="sad" title="Sad">☹️ Sad</button>
+        <button id="angry" title="Angry">😡 Angry</button>
+        <button id="excited" title="Excited">😎Excited</button>
+        <button id="neutral" title="Neutral">😐 Neutral</button>
+        <button id="tired" title="Tired">😴 Tired</button>
+        <button id="stressed" title="Stressed">😰 Stressed</button>
+        <button id="loved" title="Loved">❤️ Loved</button>
+        <button id="bored" title="Bored">😑 Bored</button>
+      </div>
+
+      <!-- Output -->
+      <div class="mood-output">
+        <div class="mood-history">
+          <!-- Selected Mood -->
+          <div id="selected-mood">
+            <h2>Selected Mood</h2>
+            <p id="mood-for-day">Select a day to see or set your mood.</p>
+          </div>
+
+          <!-- Mood History -->
+          <h2>Mood History</h2>
+          <ul id="mood-list">
+            <!-- Mood entries will be added here -->
+          </ul>
+        </div>
+
+        <!-- Calender -->
+        <div class="calender">
+          <div id="calendar-controls">
+            <button id="prev-month">⏮️</button>
+            <span id="month-year"></span>
+            <button id="next-month">⏭️</button>
+          </div>
+          <div id="calendar"></div>
+        </div>
+      </div>
+
+      <!-- Footer Section -->
+      <footer>
+        <p>&copy; 2025 | Jay Govind | All Rights Reserved</p>
+
+        <!-- Social Links -->
+        <div class="social-links">
+          <a href="https://www.github.com/Jay-Govind-Kumar" target="_blank"
+            ><i class="fab fa-github"></i
+          ></a>
+          <a href="https://www.linkedin.com/in/govind-jay" target="_blank"
+            ><i class="fab fa-linkedin"></i
+          ></a>
+          <a href="https://www.twitter.com/_JayGovind" target="_blank"
+            ><i class="fab fa-twitter"></i>
+          </a>
+        </div>
+      </footer>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
